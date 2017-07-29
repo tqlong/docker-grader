@@ -1,0 +1,9 @@
+FROM gcc
+
+RUN useradd -ms /bin/bash grader
+USER grader
+
+WORKDIR /home/grader
+ADD run_grader.sh /home/grader
+
+CMD ["bash", "run_grader.sh"]
